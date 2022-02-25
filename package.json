@@ -1,0 +1,27 @@
+{
+  "name": "js-wheels",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --env entry=awe-scroll --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chansssss/js-wheels.git"
+  },
+  "author": "chenwei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chansssss/js-wheels/issues"
+  },
+  "homepage": "https://github.com/chansssss/js-wheels#readme",
+  "devDependencies": {
+    "babel-loader": "^7.1.5",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  }
+}
