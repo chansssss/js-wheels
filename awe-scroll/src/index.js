@@ -23,18 +23,51 @@ class AweScroll {
                 callback: () => { },
                 disable: false,
             },
-            isFixedHeight: true,
             scrollDom: null
-        },config)
+        }, config)
         if (!this.config.scrollDom) {
             this.config.scrollDom = this.rootDom
         }
         this.checkIsScrolled = checkIsScrolled.bind(this)
         this.config.scrollDom.addEventListener('scroll', this.checkIsScrolled, true);
+
+
+        if (!this.config.up.disable) {
+            this.initUpEvent()
+        }
+    }
+    /**
+     * 监听下拉刷新事件
+     *
+     * @memberof AweScroll
+     */
+    initUpEvent() {
+        let self = this
+        let ts;
+        this.rootDom.addEventListener('touchstart', function (e) {
+            ts = e.touches[0].clientY;
+        });
+
+        this.rootDom.addEventListener('touchend', function (e) {
+            let te = e.changedTouches[0].clientY;
+            if (ts > te + 5) {
+                self.slidePush();
+            } else if (ts < te - 5) {
+                self.slidePull();
+            }
+        });
+    }
+
+    slidePull() {
+        this.config.down.callback();
+    }
+
+    slidePush() {
+
     }
 
     destroy() {
-        this.config.scrollDom.removeEventListener('scroll',this.checkIsScrolled,true);
+        this.config.scrollDom.removeEventListener('scroll', this.checkIsScrolled, true);
     }
 }
 

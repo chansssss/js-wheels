@@ -8,48 +8,40 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimum-scale=1,initial-scale=1,maximum-scale=1,viewport-fit=cover">
  
     <script src="../dist//main.js"></script>
-    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+    <!-- <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
     <script>
         // VConsole will be exported to `window.VConsole` by default.
         var vConsole = new window.VConsole();
-    </script>
+    </script> -->
     <title>Document</title>
     <style>
         html,body{
             margin: 0;
             padding: 0;
         }
-        #scroll {
-            width: 100vw;
-            height: 100vh;
-            overflow: auto;
+        .selectable{
+            height: 156px;
+            min-width: 124px;
+            flex: 1 0 0px;
+            border: 1px solid red;
         }
-
-        #scroll div {
-            width: 100%;
-            height: 150vh;
-            background-color: aqua;
+        .flex-rows{
+            display: flex;
+        }
+        .calendar-row{
+            
+        }
+        #calendar{
         }
     </style>
 </head>
 
 <body>
-    <div id="scroll">
-        <div></div>
+    <div id="calendar">
     </div>
     <script>
-        let scroll = new AweScroll('scroll', {
-            up: {
-                callback: () => {
-                    console.log('end')
-                }
-            },
-            down: {
-                callback: () => {
-                    console.log('refresh')
-                }
-            }
-        })
+
+        let scroll = new AweCalendar(document.getElementById('calendar'))
     </script>
 </body>
 

@@ -10,7 +10,7 @@ module.exports = (env)=> {
       filename: 'main.js',
       library:{
         type:'umd',
-        name: 'AweScroll',
+        name: 'AweCalendar',
       },
       globalObject: 'this',
       path: path.resolve(pro_path, 'dist'),

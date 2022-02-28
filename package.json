@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --env entry=awe-scroll --config webpack.config.js"
+    "build": "webpack --env entry=calendar --config webpack.config.js"
   },
   "repository": {
     "type": "git",
